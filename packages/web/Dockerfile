@@ -37,7 +37,6 @@ COPY packages/shared/package.json ./packages/shared/
 RUN npm ci --omit=dev
 
 COPY --from=builder /app/packages/web/.next ./packages/web/.next
-COPY --from=builder /app/packages/web/public ./packages/web/public
 COPY --from=builder /app/packages/shared/dist ./packages/shared/dist
 
 ENV NODE_ENV=production
